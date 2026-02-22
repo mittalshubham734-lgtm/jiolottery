@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Jio Lottery – Informational Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      :root {
+        --bg: #0b0f14;
+        --card: #111826;
+        --card2: #0f1622;
+        --text: #e8eef7;
+        --muted: #b7c3d6;
+        --line: rgba(255, 255, 255, 0.08);
+        --primary: #3b82f6;
+        --primary2: #2563eb;
+        --good: #22c55e;
+        --bad: #ef4444;
+        --warn: #f59e0b;
+        --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+        --radius: 18px;
+        --radius2: 14px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Helvetica,
+          Arial,
+          "Apple Color Emoji",
+          "Segoe UI Emoji";
+        background:
+          radial-gradient(
+            1200px 600px at 10% -10%,
+            rgba(59, 130, 246, 0.28),
+            transparent 60%
+          ),
+          radial-gradient(
+            1000px 700px at 110% 10%,
+            rgba(34, 197, 94, 0.18),
+            transparent 55%
+          ),
+          var(--bg);
+        color: var(--text);
+        line-height: 1.65;
+      }
+
+      a {
+        color: inherit;
+      }
+      .container {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      /* Header */
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(11, 15, 20, 0.78);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--line);
+      }
+      .logo-img {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px 0;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+      }
+      .logo {
+        width: 36px;
+        height: 36px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--primary), #8b5cf6);
+        box-shadow: var(--shadow);
+      }
+      .brand-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.1;
+      }
+      .brand-text strong {
+        font-size: 14.5px;
+        letter-spacing: 0.2px;
+      }
+      .brand-text span {
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .nav a.navlink {
+        text-decoration: none;
+        padding: 8px 10px;
+        border-radius: 12px;
+        color: var(--muted);
+        border: 1px solid transparent;
+      }
+      .nav a.navlink:hover {
+        border-color: var(--line);
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--text);
+        text-decoration: none;
+        cursor: pointer;
+        transition:
+          transform 0.15s ease,
+          background 0.15s ease,
+          border-color 0.15s ease;
+        font-weight: 600;
+        font-size: 13px;
+        white-space: nowrap;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 255, 255, 0.12);
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, var(--primary), var(--primary2));
+        border-color: rgba(255, 255, 255, 0.12);
+      }
+      .btn-primary:hover {
+        background: linear-gradient(135deg, #4f8dfd, #2e6bf0);
+      }
+      .btn-ghost {
+        background: transparent;
+      }
+
+      .mobile-toggle {
+        display: none;
+      }
+
+      /* Hero */
+      .hero {
+        padding: 38px 0 18px;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 18px;
+        align-items: start;
+      }
+      .hero-card {
+        background: linear-gradient(
+          180deg,
+          rgba(17, 24, 38, 0.92),
+          rgba(15, 22, 34, 0.92)
+        );
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 22px;
+        box-shadow: var(--shadow);
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--muted);
+        font-size: 12px;
+      }
+      h1 {
+        margin: 12px 0 10px;
+        font-size: clamp(22px, 2.8vw, 34px);
+        line-height: 1.25;
+        letter-spacing: -0.2px;
+      }
+      .subtext {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14.5px;
+      }
+
+      .cta-row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+      }
+
+      .notice {
+        margin-top: 14px;
+        padding: 12px 12px;
+        border-radius: 14px;
+        border: 1px dashed rgba(245, 158, 11, 0.35);
+        background: rgba(245, 158, 11, 0.08);
+        color: #ffd18a;
+        font-size: 13px;
+      }
+
+      .side-card {
+        background: rgba(17, 24, 38, 0.72);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 18px;
+      }
+      .kv {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .kv-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 12px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.02);
+      }
+      .kv-row span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .kv-row strong {
+        font-size: 13px;
+        text-align: right;
+      }
+      .copy-wrap {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin-top: 12px;
+        padding: 12px;
+        border-radius: 14px;
+        border: 1px solid rgba(59, 130, 246, 0.22);
+        background: rgba(59, 130, 246, 0.08);
+      }
+      .code {
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+        font-size: 14px;
+        letter-spacing: 0.6px;
+        color: #dbeafe;
+      }
+      .copy-btn {
+        margin-left: auto;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      /* Sections */
+      section {
+        padding: 14px 0;
+      }
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .card {
+        background: rgba(17, 24, 38, 0.72);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 18px;
+      }
+      .card h2 {
+        margin: 0 0 10px;
+        font-size: 18px;
+        letter-spacing: -0.1px;
+      }
+      .card h3 {
+        margin: 0 0 8px;
+        font-size: 16px;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .list {
+        margin: 10px 0 0;
+        padding-left: 18px;
+        color: var(--muted);
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .warning {
+        border: 1px solid rgba(239, 68, 68, 0.22);
+        background: rgba(239, 68, 68, 0.08);
+        color: #fecaca;
+        border-radius: 14px;
+        padding: 12px;
+        font-size: 13px;
+        margin-top: 10px;
+      }
+
+      /* Pros/Cons */
+      .proscons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .pc-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 10px;
+      }
+      .pc-title .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+      }
+      .dot.good {
+        background: var(--good);
+      }
+      .notice-btn {
+        display: block;
+        margin-top: 14px;
+        padding: 16px;
+        border-radius: 14px;
+        border: 1px solid rgba(59, 130, 246, 0.35);
+        background: linear-gradient(135deg, #3b82f6, #2563eb);
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+        box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
+      }
+
+      .notice-btn span {
+        font-weight: 500;
+      }
+
+      .notice-btn small {
+        font-weight: 400;
+        opacity: 0.85;
+      }
+
+      .notice-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(37, 99, 235, 0.6);
+      }
+      .copyright {
+        margin-top: 18px;
+        padding-top: 14px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        text-align: center;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      .brand-link {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .brand-link:hover {
+        text-decoration: underline;
+      }
+
+      .dot.bad {
+        background: var(--bad);
+      }
+      .pc ul {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted);
+      }
+      .pc li {
+        margin: 6px 0;
+      }
+
+      /* FAQ */
+      details {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 12px 12px;
+        background: rgba(255, 255, 255, 0.02);
+      }
+      details + details {
+        margin-top: 10px;
+      }
+      summary {
+        cursor: pointer;
+        font-weight: 700;
+        list-style: none;
+      }
+      summary::-webkit-details-marker {
+        display: none;
+      }
+      .faq-a {
+        margin: 10px 0 0;
+        color: var(--muted);
+      }
+
+      /* Footer */
+      footer {
+        padding: 22px 0 30px;
+        border-top: 1px solid var(--line);
+        margin-top: 18px;
+      }
+      .footer-links {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+      .footer-links a {
+        color: var(--muted);
+        text-decoration: none;
+        border: 1px solid transparent;
+        padding: 8px 10px;
+        border-radius: 12px;
+      }
+      .footer-links a:hover {
+        border-color: var(--line);
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.03);
+      }
+      .fineprint {
+        margin-top: 12px;
+        color: rgba(183, 195, 214, 0.85);
+        font-size: 12.5px;
+      }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+        .grid-2,
+        .proscons {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 760px) {
+        .mobile-toggle {
+          display: inline-flex;
+        }
+        .nav {
+          display: none;
+          width: 100%;
+          padding: 10px 0 0;
+        }
+        .nav.open {
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 10px;
+        }
+        .nav a.navlink {
+          width: 100%;
+        }
+        .nav .btn {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+      <div class="container">
+        <div class="header-inner">
+          <a class="brand" href="index.html" aria-label="Go to home">
+            <img src="images/rename.jpeg" alt="Jio Lottery" class="logo-img" />
+            <div class="brand-text">
+              <strong>Jio Lottery</strong>
+              <span>Educational & informational</span>
+            </div>
+          </a>
+
+          <button
+            class="btn btn-ghost mobile-toggle"
+            id="mobileToggle"
+            type="button">
+            ☰ Menu
+          </button>
+
+          <nav class="nav" id="nav">
+            <a class="navlink" href="index.html">Home</a>
+            <a class="navlink" href="contact.html">Contact</a>
+            <a class="navlink" href="about.html">About</a>
+
+            <!-- CTA buttons -->
+            <a
+              class="btn"
+              href="login.html"
+              target="_blank"
+              rel="nofollow noopener sponsored">
+              Login
+            </a>
+
+            <a
+              class="btn btn-primary"
+              href="register.html"
+              target="_blank"
+              rel="nofollow noopener sponsored">
+              Register
+            </a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <!-- Left Content -->
+          <div class="hero-card">
+            <span class="eyebrow">📱 Mobile Access Guide</span>
+            <h1>Jio Lottery Download App – APK & Mobile Access</h1>
+
+            <p class="subtext">
+              This page provides educational information about how users
+              typically access Jio Lottery platforms via mobile apps or
+              browser-based systems.
+            </p>
+
+            <div class="cta-row">
+              <a
+                class="btn btn-primary"
+                href="https://jiolottery-theta.vercel.app/"
+                target="_blank"
+                rel="nofollow noopener sponsored">
+                Visit Official Platform
+              </a>
+
+              <a class="btn btn-ghost" href="login.html"> Login Guide </a>
+            </div>
+
+            <div class="notice">
+              ⚠ This website does not host APK files or request sensitive data.
+              Always verify external sources before downloading apps.
+            </div>
+          </div>
+
+          <!-- Right Info Card -->
+          <aside class="side-card">
+            <div class="kv">
+              <div class="kv-row">
+                <span>App Name</span>
+                <strong>Jio Lottery Game App</strong>
+              </div>
+              <div class="kv-row">
+                <span>APK Size</span>
+                <strong>8.2 MB</strong>
+              </div>
+              <div class="kv-row">
+                <span>Platforms</span>
+                <strong>Android, Browser (iOS)</strong>
+              </div>
+              <div class="kv-row">
+                <span>User Base</span>
+                <strong>1 Lakh+ Users</strong>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ================= INFO SECTION ================= -->
+      <section>
+        <div class="container grid-2">
+          <div class="card">
+            <h2>How Users Access the App</h2>
+            <ul class="list">
+              <li>Visit the official website</li>
+              <li>Click on Download App (Android)</li>
+              <li>Allow unknown sources if required</li>
+              <li>Install and login using registered number</li>
+            </ul>
+          </div>
+
+          <div class="card warning">
+            <h3>Download Safety Notice</h3>
+            <p>
+              Fake APK links are common. This website does not provide
+              downloads. Users should avoid third-party APK sites and verify
+              authenticity.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+      <div class="container">
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="disclaimer.html">Disclaimer</a>
+        </div>
+
+        <div id="privacy" class="fineprint">
+          <strong>Privacy:</strong> This page is informational and does not
+          request OTPs or passwords. External links may direct to third-party
+          services.
+        </div>
+
+        <div class="copyright">
+          © 2026 –
+          <a href="index.html" class="brand-link">Jio Lottery</a>, All rights
+          reserved to the brand.
+        </div>
+      </div>
+    </footer>
+
+    <!-- ================= MOBILE MENU SCRIPT ================= -->
+    <script>
+      const toggle = document.getElementById("mobileToggle");
+      const nav = document.getElementById("nav");
+
+      toggle?.addEventListener("click", () => {
+        nav.classList.toggle("open");
+      });
+    </script>
+  </body>
+</html>

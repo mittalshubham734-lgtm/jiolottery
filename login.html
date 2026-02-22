@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Jio Lottery Login - Fast & Safe Access | 2026</title>
+    <meta
+      name="description"
+      content="Access your Jio Lottery login securely. Step-by-step guide, common login issues, OTP help, and safe account access instructions are explained clearly." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ✅ SAME THEME STYLING -->
+    <style>
+      :root {
+        --bg: #0b0f14;
+        --card: #111826;
+        --card2: #0f1622;
+        --text: #e8eef7;
+        --muted: #b7c3d6;
+        --line: rgba(255, 255, 255, 0.08);
+        --primary: #3b82f6;
+        --primary2: #2563eb;
+        --good: #22c55e;
+        --bad: #ef4444;
+        --warn: #f59e0b;
+        --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+        --radius: 18px;
+        --radius2: 14px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Helvetica,
+          Arial,
+          "Apple Color Emoji",
+          "Segoe UI Emoji";
+        background:
+          radial-gradient(
+            1200px 600px at 10% -10%,
+            rgba(59, 130, 246, 0.28),
+            transparent 60%
+          ),
+          radial-gradient(
+            1000px 700px at 110% 10%,
+            rgba(34, 197, 94, 0.18),
+            transparent 55%
+          ),
+          var(--bg);
+        color: var(--text);
+        line-height: 1.65;
+      }
+
+      a {
+        color: inherit;
+      }
+      .container {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      /* Header */
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(11, 15, 20, 0.78);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--line);
+      }
+      .logo-img {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px 0;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+      }
+      .brand-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.1;
+      }
+      .brand-text strong {
+        font-size: 14.5px;
+        letter-spacing: 0.2px;
+      }
+      .brand-text span {
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .nav a.navlink {
+        text-decoration: none;
+        padding: 8px 10px;
+        border-radius: 12px;
+        color: var(--muted);
+        border: 1px solid transparent;
+      }
+      .nav a.navlink:hover {
+        border-color: var(--line);
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--text);
+        text-decoration: none;
+        cursor: pointer;
+        transition:
+          transform 0.15s ease,
+          background 0.15s ease,
+          border-color 0.15s ease;
+        font-weight: 600;
+        font-size: 13px;
+        white-space: nowrap;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 255, 255, 0.12);
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, var(--primary), var(--primary2));
+        border-color: rgba(255, 255, 255, 0.12);
+      }
+      .btn-primary:hover {
+        background: linear-gradient(135deg, #4f8dfd, #2e6bf0);
+      }
+      .btn-ghost {
+        background: transparent;
+      }
+
+      .mobile-toggle {
+        display: none;
+      }
+
+      /* Hero */
+      .hero {
+        padding: 38px 0 18px;
+      }
+      .hero-card {
+        background: linear-gradient(
+          180deg,
+          rgba(17, 24, 38, 0.92),
+          rgba(15, 22, 34, 0.92)
+        );
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 22px;
+        box-shadow: var(--shadow);
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--muted);
+        font-size: 12px;
+      }
+      h1 {
+        margin: 12px 0 10px;
+        font-size: clamp(22px, 2.8vw, 34px);
+        line-height: 1.25;
+        letter-spacing: -0.2px;
+      }
+      .subtext {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14.5px;
+      }
+      .cta-row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+      }
+      .notice {
+        margin-top: 14px;
+        padding: 12px 12px;
+        border-radius: 14px;
+        border: 1px dashed rgba(245, 158, 11, 0.35);
+        background: rgba(245, 158, 11, 0.08);
+        color: #ffd18a;
+        font-size: 13px;
+      }
+
+      section {
+        padding: 14px 0;
+      }
+      .card {
+        background: rgba(17, 24, 38, 0.72);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 18px;
+      }
+      .card h2 {
+        margin: 0 0 10px;
+        font-size: 18px;
+        letter-spacing: -0.1px;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .list {
+        margin: 10px 0 0;
+        padding-left: 18px;
+        color: var(--muted);
+      }
+
+      .notice-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 14px;
+        padding: 14px 16px;
+        border-radius: 14px;
+        border: 1px solid rgba(59, 130, 246, 0.35);
+        background: linear-gradient(135deg, #3b82f6, #2563eb);
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 700;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+        box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
+      }
+      .notice-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(37, 99, 235, 0.6);
+      }
+
+      /* Footer */
+      footer {
+        padding: 22px 0 30px;
+        border-top: 1px solid var(--line);
+        margin-top: 18px;
+      }
+      .footer-links {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+      .footer-links a {
+        color: var(--muted);
+        text-decoration: none;
+        border: 1px solid transparent;
+        padding: 8px 10px;
+        border-radius: 12px;
+      }
+      .footer-links a:hover {
+        border-color: var(--line);
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.03);
+      }
+      .fineprint {
+        margin-top: 12px;
+        color: rgba(183, 195, 214, 0.85);
+        font-size: 12.5px;
+      }
+      .copyright {
+        margin-top: 18px;
+        padding-top: 14px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        text-align: center;
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .brand-link {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .brand-link:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive */
+      @media (max-width: 760px) {
+        .mobile-toggle {
+          display: inline-flex;
+        }
+        .nav {
+          display: none;
+          width: 100%;
+          padding: 10px 0 0;
+        }
+        .nav.open {
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 10px;
+        }
+        .nav a.navlink {
+          width: 100%;
+        }
+        .nav .btn {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ✅ HEADER -->
+    <header class="header">
+      <div class="container">
+        <div class="header-inner">
+          <a class="brand" href="index.html" aria-label="Go to home">
+            <img src="images/rename.jpeg" alt="Jio Lottery" class="logo-img" />
+            <div class="brand-text">
+              <strong>Jio Lottery</strong>
+              <span>Educational & informational</span>
+            </div>
+          </a>
+
+          <button
+            class="btn btn-ghost mobile-toggle"
+            id="mobileToggle"
+            type="button">
+            ☰ Menu
+          </button>
+
+          <nav class="nav" id="nav">
+            <a class="navlink" href="index.html">Home</a>
+            <a class="navlink" href="contact.html">Contact</a>
+            <a class="navlink" href="about.html">About</a>
+
+            <a
+              class="btn"
+              href="login.html"
+              target="_blank"
+              rel="nofollow noopener sponsored"
+              >Login</a
+            >
+            <a
+              class="btn btn-primary"
+              href="register.html"
+              target="_blank"
+              rel="nofollow noopener sponsored"
+              >Register</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- ✅ MAIN -->
+    <main class="container">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-card">
+          <span class="eyebrow">Login Guide • Secure Access</span>
+          <h1>Jio Lottery Login – Secure Account Access Guide</h1>
+          <p class="subtext">
+            Users searching for Jio lottery login usually want direct and quick
+            access to their account dashboard. Whether you are a returning user
+            or logging in for the first time after registration, understanding
+            the proper login method helps prevent errors and avoid fake or
+            duplicate websites.
+          </p>
+
+          <div class="cta-row">
+            <a
+              class="notice-btn"
+              href="https://jiolottery-theta.vercel.app/"
+              target="_blank"
+              rel="nofollow noopener sponsored"
+              >Go to Official Login</a
+            >
+          </div>
+
+          <div class="notice">
+            ⚠ Always confirm the website address before entering your details.
+            Never share OTPs with anyone.
+          </div>
+        </div>
+      </section>
+
+      <!-- Content cards -->
+      <section class="card">
+        <h2>How Login Works</h2>
+        <p class="muted">
+          The login to Jio Lottery process is designed to be simple and
+          mobile-friendly. Most users access the platform through their
+          smartphone browser or installed app. After reaching the official login
+          page, users are required to enter their registered mobile number and
+          password. In some cases, OTP verification may be used for additional
+          security.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Step-by-Step Jio Lottery Login Process</h2>
+        <ul class="list">
+          <li>Visit the official Jio Lottery platform.</li>
+          <li>Click on the Login option.</li>
+          <li>Enter your registered mobile number.</li>
+          <li>Input your password or request OTP verification.</li>
+          <li>Complete verification and access your dashboard.</li>
+        </ul>
+        <p class="muted" style="margin-top: 12px">
+          If login fails, double-check your credentials. Many login issues occur
+          due to typing errors, incorrect passwords, or unstable internet
+          connections.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Common Jio Lottery Login Issues</h2>
+        <ul class="list">
+          <li>Incorrect mobile number</li>
+          <li>Wrong password</li>
+          <li>OTP not received</li>
+          <li>Server under maintenance</li>
+          <li>Network instability</li>
+        </ul>
+        <p class="muted" style="margin-top: 12px">
+          Users should always ensure they are accessing the official platform.
+          Fake websites often replicate the login page to collect user
+          information.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Login Security Tips</h2>
+        <ul class="list">
+          <li>Never share your OTP with anyone.</li>
+          <li>Avoid logging in on public or shared devices.</li>
+          <li>Do not click on unknown links claiming bonus rewards.</li>
+          <li>
+            Always confirm the website address before entering credentials.
+          </li>
+          <li>
+            The login feature is meant for registered users only. If you are
+            new, you must complete registration first.
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- ✅ FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="disclaimer.html">Disclaimer</a>
+        </div>
+
+        <div id="privacy" class="fineprint">
+          <strong>Privacy:</strong> This page is informational and does not
+          request OTPs or passwords. External links may direct to third-party
+          services.
+        </div>
+
+        <div class="copyright">
+          © 2026 –
+          <a href="index.html" class="brand-link">Jio Lottery</a>, All rights
+          reserved to the brand.
+        </div>
+      </div>
+    </footer>
+
+    <!-- ✅ Mobile menu -->
+    <script>
+      const toggle = document.getElementById("mobileToggle");
+      const nav = document.getElementById("nav");
+      toggle?.addEventListener("click", () => nav.classList.toggle("open"));
+    </script>
+  </body>
+</html>
