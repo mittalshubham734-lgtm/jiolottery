@@ -2,13 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ✅ Meta -->
     <title>Jio Lottery Register | Create Account & ₹500 Invite Code</title>
     <meta
       name="description"
       content="Learn how to register on Jio Lottery. Step-by-step signup guide, ₹500 invite code explained, account creation process and safety tips." />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" href="images/rename.jpeg" />
 
-    <!-- SAME PREMIUM DARK STYLING -->
+    <!-- ✅ SAME THEME + RESPONSIVE HEADER/FOOTER (LIKE INDEX.HTML) -->
     <style>
       :root {
         --bg: #0b0f14;
@@ -19,20 +23,32 @@
         --line: rgba(255, 255, 255, 0.08);
         --primary: #3b82f6;
         --primary2: #2563eb;
+        --good: #22c55e;
+        --bad: #ef4444;
+        --warn: #f59e0b;
         --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
         --radius: 18px;
+        --radius2: 14px;
       }
 
       * {
         box-sizing: border-box;
       }
+      html {
+        scroll-behavior: smooth;
+      }
       body {
         margin: 0;
         font-family:
+          ui-sans-serif,
           system-ui,
           -apple-system,
           Segoe UI,
-          Roboto;
+          Roboto,
+          Helvetica,
+          Arial,
+          "Apple Color Emoji",
+          "Segoe UI Emoji";
         background:
           radial-gradient(
             1200px 600px at 10% -10%,
@@ -49,24 +65,35 @@
         line-height: 1.65;
       }
 
+      a {
+        color: inherit;
+      }
       .container {
         width: min(1120px, calc(100% - 32px));
-        margin: auto;
+        margin: 0 auto;
       }
 
-      /* HEADER */
+      /* Header */
       .header {
         position: sticky;
         top: 0;
         z-index: 50;
-        background: rgba(11, 15, 20, 0.85);
+        background: rgba(11, 15, 20, 0.78);
         backdrop-filter: blur(12px);
         border-bottom: 1px solid var(--line);
       }
+      .logo-img {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+
       .header-inner {
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
+        gap: 12px;
         padding: 14px 0;
       }
       .brand {
@@ -74,15 +101,15 @@
         align-items: center;
         gap: 10px;
         text-decoration: none;
-        color: inherit;
       }
-      .logo-img {
-        width: 36px;
-        height: 36px;
-        border-radius: 10px;
+      .brand-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.1;
       }
       .brand-text strong {
-        font-size: 14px;
+        font-size: 14.5px;
+        letter-spacing: 0.2px;
       }
       .brand-text span {
         font-size: 12px;
@@ -91,71 +118,137 @@
 
       .nav {
         display: flex;
-        gap: 10px;
         align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
       }
-
-      .navlink {
+      .nav a.navlink {
         text-decoration: none;
-        color: var(--muted);
         padding: 8px 10px;
         border-radius: 12px;
+        color: var(--muted);
+        border: 1px solid transparent;
       }
-      .navlink:hover {
-        background: rgba(255, 255, 255, 0.05);
+      .nav a.navlink:hover {
+        border-color: var(--line);
         color: var(--text);
+        background: rgba(255, 255, 255, 0.03);
       }
 
       .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
         padding: 10px 14px;
         border-radius: 14px;
         border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.03);
         color: var(--text);
         text-decoration: none;
+        cursor: pointer;
+        transition:
+          transform 0.15s ease,
+          background 0.15s ease,
+          border-color 0.15s ease;
         font-weight: 600;
         font-size: 13px;
+        white-space: nowrap;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 255, 255, 0.12);
       }
       .btn-primary {
         background: linear-gradient(135deg, var(--primary), var(--primary2));
-        border: none;
+        border-color: rgba(255, 255, 255, 0.12);
+      }
+      .btn-primary:hover {
+        background: linear-gradient(135deg, #4f8dfd, #2e6bf0);
+      }
+      .btn-ghost {
+        background: transparent;
       }
 
-      /* HERO */
-      .hero {
-        padding: 40px 0 20px;
+      .mobile-toggle {
+        display: none;
       }
+
+      /* Page */
+      main {
+        padding: 20px 0 10px;
+      }
+
+      .hero {
+        padding: 18px 0 12px;
+      }
+
       .hero-card {
         background: linear-gradient(
           180deg,
-          rgba(17, 24, 38, 0.95),
-          rgba(15, 22, 34, 0.95)
+          rgba(17, 24, 38, 0.92),
+          rgba(15, 22, 34, 0.92)
         );
         border: 1px solid var(--line);
         border-radius: var(--radius);
-        padding: 24px;
+        padding: 22px;
         box-shadow: var(--shadow);
       }
 
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--muted);
+        font-size: 12px;
+      }
+
       h1 {
-        margin: 10px 0;
-        font-size: 28px;
+        margin: 12px 0 10px;
+        font-size: clamp(22px, 2.8vw, 34px);
+        line-height: 1.25;
+        letter-spacing: -0.2px;
       }
 
       .subtext {
+        margin: 0;
         color: var(--muted);
-        font-size: 15px;
+        font-size: 14.5px;
+      }
+
+      .cta-row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 16px;
       }
 
       .notice-btn {
-        display: inline-block;
-        margin-top: 18px;
-        padding: 14px 18px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 16px;
         border-radius: 14px;
+        border: 1px solid rgba(59, 130, 246, 0.35);
         background: linear-gradient(135deg, #3b82f6, #2563eb);
-        color: #fff;
-        font-weight: 700;
+        color: white;
         text-decoration: none;
+        font-size: 14px;
+        font-weight: 700;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+        box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
+      }
+      .notice-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(37, 99, 235, 0.6);
       }
 
       section {
@@ -163,93 +256,171 @@
       }
 
       .card {
-        background: rgba(17, 24, 38, 0.8);
+        background: rgba(17, 24, 38, 0.72);
         border: 1px solid var(--line);
         border-radius: var(--radius);
         padding: 18px;
-        margin-bottom: 16px;
       }
 
       .card h2 {
         margin: 0 0 10px;
+        font-size: 18px;
+        letter-spacing: -0.1px;
       }
 
-      ul {
+      .card h3 {
+        margin: 10px 0 8px;
+        font-size: 16px;
+      }
+
+      .list {
+        margin: 10px 0 0;
         padding-left: 18px;
         color: var(--muted);
       }
 
-      .invite-box {
-        margin-top: 10px;
-        padding: 14px;
+      .warning {
+        border: 1px solid rgba(245, 158, 11, 0.28);
+        background: rgba(245, 158, 11, 0.08);
+        color: #ffd18a;
         border-radius: 14px;
-        background: rgba(59, 130, 246, 0.1);
-        border: 1px solid rgba(59, 130, 246, 0.4);
-        font-weight: 700;
-        font-size: 16px;
+        padding: 12px;
+        font-size: 13px;
+        margin-top: 12px;
       }
 
+      .copy-wrap {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin-top: 12px;
+        padding: 12px;
+        border-radius: 14px;
+        border: 1px solid rgba(59, 130, 246, 0.22);
+        background: rgba(59, 130, 246, 0.08);
+      }
+      .code {
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+        font-size: 14px;
+        letter-spacing: 0.6px;
+        color: #dbeafe;
+      }
+      .copy-btn {
+        margin-left: auto;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      /* Footer */
       footer {
         padding: 22px 0 30px;
         border-top: 1px solid var(--line);
-        margin-top: 20px;
+        margin-top: 18px;
       }
-
       .footer-links {
         display: flex;
         gap: 14px;
         flex-wrap: wrap;
       }
-
       .footer-links a {
         color: var(--muted);
         text-decoration: none;
+        border: 1px solid transparent;
+        padding: 8px 10px;
+        border-radius: 12px;
       }
-
+      .footer-links a:hover {
+        border-color: var(--line);
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.03);
+      }
       .fineprint {
         margin-top: 12px;
-        font-size: 12px;
-        color: var(--muted);
+        color: rgba(183, 195, 214, 0.85);
+        font-size: 12.5px;
       }
-
       .copyright {
-        margin-top: 14px;
-        font-size: 13px;
+        margin-top: 18px;
+        padding-top: 14px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
         text-align: center;
+        font-size: 13px;
         color: var(--muted);
       }
-
       .brand-link {
         color: var(--text);
         text-decoration: none;
         font-weight: 600;
       }
+      .brand-link:hover {
+        text-decoration: underline;
+      }
+
+      /* ✅ Responsive like index.html */
+      @media (max-width: 760px) {
+        .mobile-toggle {
+          display: inline-flex;
+        }
+        .nav {
+          display: none;
+          width: 100%;
+          padding: 10px 0 0;
+        }
+        .nav.open {
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 10px;
+        }
+        .nav a.navlink {
+          width: 100%;
+        }
+        .nav .btn {
+          width: 100%;
+        }
+      }
     </style>
   </head>
 
   <body>
-    <!-- HEADER -->
+    <!-- ✅ HEADER (RESPONSIVE) -->
     <header class="header">
       <div class="container">
         <div class="header-inner">
-          <a class="brand" href="index.html">
-            <img src="images/rename.jpeg" class="logo-img" />
+          <a class="brand" href="index.html" aria-label="Go to home">
+            <img src="images/rename.jpeg" alt="Jio Lottery" class="logo-img" />
             <div class="brand-text">
               <strong>Jio Lottery</strong>
               <span>Educational & informational</span>
             </div>
           </a>
 
-          <nav class="nav">
+          <button
+            class="btn btn-ghost mobile-toggle"
+            id="mobileToggle"
+            type="button">
+            ☰ Menu
+          </button>
+
+          <nav class="nav" id="nav">
             <a class="navlink" href="index.html">Home</a>
             <a class="navlink" href="contact.html">Contact</a>
             <a class="navlink" href="about.html">About</a>
 
-            <a class="btn" href="login.html" rel="nofollow sponsored">Login</a>
+            <a
+              class="btn"
+              href="login.html"
+              target="_blank"
+              rel="nofollow noopener sponsored"
+              >Login</a
+            >
             <a
               class="btn btn-primary"
               href="register.html"
-              rel="nofollow sponsored"
+              target="_blank"
+              rel="nofollow noopener sponsored"
               >Register</a
             >
           </nav>
@@ -257,75 +428,106 @@
       </div>
     </header>
 
-    <!-- MAIN -->
+    <!-- ✅ MAIN -->
     <main class="container">
+      <!-- Hero -->
       <section class="hero">
         <div class="hero-card">
+          <span class="eyebrow">Register Guide • Step-by-step</span>
           <h1>Jio Lottery Register – Complete Account Creation Guide</h1>
           <p class="subtext">
             Users searching for the Jio lottery register are typically new users
             looking to create an account and access the gaming dashboard.
             Registration is generally straightforward and designed for quick
-            onboarding.
+            onboarding. Creating an account requires a valid mobile number and
+            basic verification. Most platforms allow users to register within a
+            few minutes.
           </p>
 
-          <a
-            class="notice-btn"
-            href="https://jiolottery-theta.vercel.app/"
-            target="_blank"
-            rel="nofollow noopener sponsored">
-            Go to Official Registration
-          </a>
+          <div class="cta-row">
+            <a
+              class="notice-btn"
+              href="https://jiolottery-theta.vercel.app/"
+              target="_blank"
+              rel="nofollow noopener sponsored"
+              >Go to Official Registration</a
+            >
+            <a class="btn" href="login.html">Login guide</a>
+          </div>
+
+          <div class="warning">
+            ⚠ Registration is usually free, but please review platform rules and
+            use responsible limits before depositing any money.
+          </div>
         </div>
       </section>
 
       <section class="card">
         <h2>How to Register on Jio Lottery</h2>
-        <ul>
+        <ul class="list">
           <li>Visit the official Jio Lottery platform.</li>
           <li>Click on Register or Sign Up.</li>
           <li>Enter your mobile number.</li>
           <li>Create a secure password.</li>
           <li>Enter an invite code if available.</li>
           <li>Verify via OTP.</li>
+          <li>
+            After verification, the account becomes active, and users can log in
+            immediately.
+          </li>
         </ul>
       </section>
 
       <section class="card">
         <h2>Jio Lottery Invite Code ₹500 Explained</h2>
-        <p>
-          Many users search for the Jio lottery invite code ₹500 expecting
-          direct cash rewards. Invite codes generally provide bonus gameplay
-          balance and are not guaranteed withdrawable cash.
+        <p class="subtext">
+          Many users search for the Jio lottery invite code ₹500, expecting
+          direct cash rewards. It is important to understand that invite codes
+          generally provide bonus gameplay balance and are not guaranteed to be
+          withdrawable cash.
         </p>
 
-        <div class="invite-box">Invitation Code: 716384986</div>
+        <div class="copy-wrap" aria-label="Invitation code">
+          <div>
+            <div class="subtext" style="font-size: 12px; margin-bottom: 4px">
+              Invitation Code
+            </div>
+            <div class="code" id="inviteCode">716384986</div>
+          </div>
+          <button class="btn copy-btn" id="copyBtn" type="button">Copy</button>
+        </div>
 
-        <h3>Key Points:</h3>
-        <ul>
+        <h3>Key Points About Invite Codes</h3>
+        <ul class="list">
           <li>Usually applicable to new users only</li>
           <li>May provide promotional balance</li>
           <li>Subject to platform rules</li>
           <li>Not guaranteed income</li>
         </ul>
+
+        <p class="subtext" style="margin-top: 12px">
+          Users should carefully review the platform’s terms before making
+          deposits.
+        </p>
       </section>
 
       <section class="card">
         <h2>Before Registering</h2>
-        <ul>
+        <ul class="list">
           <li>Confirm you are on the official website.</li>
           <li>Understand that lottery-style games are chance-based.</li>
           <li>Avoid unrealistic earning expectations.</li>
           <li>Set personal financial limits.</li>
         </ul>
-        <p class="subtext">
+
+        <p class="subtext" style="margin-top: 12px">
           Registration is typically free, but responsible use is strongly
           advised.
         </p>
       </section>
     </main>
 
-    <!-- FOOTER -->
+    <!-- ✅ FOOTER (RESPONSIVE) -->
     <footer>
       <div class="container">
         <div class="footer-links">
@@ -335,17 +537,43 @@
           <a href="disclaimer.html">Disclaimer</a>
         </div>
 
-        <div class="fineprint">
-          This page is informational and does not request OTPs or passwords.
-          External links may direct to third-party services.
+        <div id="privacy" class="fineprint">
+          <strong>Privacy:</strong> This page is informational and does not
+          request OTPs or passwords. External links may direct to third-party
+          services.
         </div>
 
         <div class="copyright">
           © 2026 –
           <a href="index.html" class="brand-link">Jio Lottery</a>, All rights
-          reserved.
+          reserved to the brand.
         </div>
       </div>
     </footer>
+
+    <script>
+      // ✅ Mobile menu (same as index.html)
+      const nav = document.getElementById("nav");
+      const toggle = document.getElementById("mobileToggle");
+      toggle?.addEventListener("click", () => nav.classList.toggle("open"));
+
+      // ✅ Copy invite code
+      const copyBtn = document.getElementById("copyBtn");
+      const inviteCode = document.getElementById("inviteCode");
+      copyBtn?.addEventListener("click", async () => {
+        try {
+          const text = inviteCode?.textContent?.trim() || "";
+          await navigator.clipboard.writeText(text);
+          const old = copyBtn.textContent;
+          copyBtn.textContent = "Copied ✓";
+          setTimeout(() => (copyBtn.textContent = old), 1200);
+        } catch (e) {
+          alert(
+            "Copy failed. Please copy manually: " +
+              (inviteCode?.textContent || ""),
+          );
+        }
+      });
+    </script>
   </body>
 </html>
